@@ -1,23 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { StyledConfig } from "./styles/UserInfo.styled";
 import {
   useAmountContext,
   useAmountUpdateContext,
   useTempoContext,
   useTempoUpdateContext,
-  usePlayContext,
   useStopUpdateContext,
   usePlayUpdateContext,
   useVolumeContext,
   useVolumeUpdateContext,
 } from "./ContextProvider";
-import { ReactSVG } from "react-svg";
 import { motion, useAnimation } from "framer-motion";
-import Tile, { ShowTile } from "./Tile";
+import { ShowTile } from "./Tile";
 import { useColorContext } from "./ContextProvider";
 import { Logo, Plus, Minus, Play, Stop } from "./icons";
-
-const playicon = require("./result.svg") as string;
 
 export const Config = () => {
   const play = usePlayUpdateContext();
@@ -29,11 +25,6 @@ export const Config = () => {
   const volume = useVolumeContext();
   const updateVolume = useVolumeUpdateContext();
   const color = useColorContext();
-  const changeColor = useAnimation();
-  const [chosenColor, setColor] = useState(0);
-  useEffect(() => {
-    setColor(color);
-  }, [color]);
 
   return (
     <StyledConfig>

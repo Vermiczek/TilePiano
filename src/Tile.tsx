@@ -7,10 +7,7 @@ import {
 } from "./ContextProvider";
 import { StyledTile } from "./styles/Tile.styled";
 import { motion, useAnimation } from "framer-motion";
-import { Howl, Howler } from "howler";
-import useContext from "react";
-import { convertCompilerOptionsFromJson } from "typescript";
-import { debuglog } from "util";
+import { Howl } from "howler";
 
 export interface tile {
   tileID: number;

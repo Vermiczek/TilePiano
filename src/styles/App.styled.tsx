@@ -33,6 +33,8 @@ export const StyledApp = styled.div`
     width: 400px;
     padding: 20px;
     overflow-x: scroll;
+    position: fixed;
+    top: 50px;
     max-width: 300px;
   }
 `;

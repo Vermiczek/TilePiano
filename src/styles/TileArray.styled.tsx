@@ -8,10 +8,10 @@ export const StyledTileArray = styled.div`
   border-color: red;
 
   .map-wrapper {
-    border-radius: 13px;
+    /* border-radius: 13px;
     border: 2px;
     border-color: #5c2248;
-    border-style: solid;
+    border-style: solid; */
     display: flex;
     flex-direction: row;
     max-width: 700px;

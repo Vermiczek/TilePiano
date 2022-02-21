@@ -5,18 +5,12 @@ import {
   StyledTileColumn,
 } from "./styles/TileColumn.styled";
 import { useStopContext, useTempoContext } from "./ContextProvider";
-import { motion, useAnimation } from "framer-motion";
-import { createParenthesizedType } from "typescript";
-import { clear } from "console";
+import { motion } from "framer-motion";
 
 interface Props {
   id: number;
   tiles: tile[];
   play: boolean;
-}
-
-interface tim {
-  tim: ReturnType<typeof setTimeout>;
 }
 
 export const TileColumn = (props: Props) => {
@@ -28,7 +22,6 @@ export const TileColumn = (props: Props) => {
   const firstRefresh: MutableRefObject<boolean> = useRef(true);
   const stop: boolean = useStopContext();
   const tempo: number = useTempoContext();
-  var x: any;
 
   const refreshTile = (idx: number, type: number) => {
     let tempTileArray: tile[] = tileArray;
