@@ -50,10 +50,8 @@ export const Tile = (props: Props) => {
   const [tileID, setTileID] = useState<number>(props.id);
   const [play, setPlay] = useState<boolean>(false);
   const [type, setType] = useState<number>(props.type);
-  const firstRefresh: MutableRefObject<boolean> = useRef(false);
   const changeColor = useAnimation();
   const volumeCtx = useVolumeContext();
-  const bounceOnSound = useAnimation();
   const upContext = useColorUpdateContext();
   const typeContext: number = useColorContext();
   const volume = ((1 - tileID / 10) * volumeCtx) / 100;
@@ -92,12 +90,9 @@ export const Tile = (props: Props) => {
   }
 
   const clickEvents = () => {
-    console.log(tileID);
     changeColor.start({ backgroundColor: dictColor[type] });
     if (tileID === 0) {
       upContext(type);
-      console.log("New color");
-      console.log(props.play);
       soundPlay(type);
     } else {
       setType(typeContext);
@@ -107,7 +102,7 @@ export const Tile = (props: Props) => {
 
   useEffect(() => {
     changeColor.start({ backgroundColor: dictColor[type] });
-  }, [type]);
+  }, [changeColor, type]);
 
   return (
     <StyledTile
@@ -138,6 +133,7 @@ export const ShowTile = (props: Props) => {
 
   return (
     <StyledTile
+      className="showtile"
       as={motion.div}
       animate={changeColor}
       transition={{ duration: 0.4 }}

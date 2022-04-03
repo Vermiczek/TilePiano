@@ -6,22 +6,29 @@ export const StyledConfig = styled.div`
   flex-direction: column;
   align-items: right;
   border-style: solid;
+  background-color: rgba(169, 134, 175, 0.95);
+  padding: 20px;
+  padding-top: 30px;
+  border-radius: 10px;
   border-color: blueviolet;
   border: 10px;
   margin: 25px;
+  transform: translateY(-5vh);
 
   .text {
     color: #611c52;
     font-family: fantasy;
   }
 
+
   .buttons {
-    margin: 10%;
+    margin: 10px 15% 0 15%;
     display: grid;
     width: 200px;
     grid-template-columns: 30px 30px;
     grid-row: auto auto;
     grid-gap: 50px;
+    size: 10vh;
   }
 
   .text {
@@ -30,7 +37,7 @@ export const StyledConfig = styled.div`
   }
 
   .slider {
-    margin-top: 30px;
+    margin-top: 10px;
     -webkit-appearance: none; /* Override default CSS styles */
     appearance: none;
     width: 100%;
@@ -56,6 +63,10 @@ export const StyledConfig = styled.div`
     height: 25px; /* Slider handle height */
     background: #04aa6d; /* Green background */
     cursor: pointer; /* Cursor on hover */
+  }
+
+  .slider::-webkit-slider-runnable-track{
+    border-radius: 50%;
   }
 
   .slider::-webkit-range-thumb {

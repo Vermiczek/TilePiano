@@ -35,7 +35,6 @@ export const TileColumn = (props: Props) => {
         setPlaying(props.play);
         tim.current = false;
       }, (1000 * columnID * (100 - tempo)) / 50);
-      console.log(tim.current);
     }
   }, [props.play, stop]);
 
