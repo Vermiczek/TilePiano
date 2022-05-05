@@ -8,7 +8,7 @@ export const StyledTileArray = styled.div`
   background-color: rgba(169, 134, 175, 0.95);
   padding: 20px;
   border-radius: 10px;
-  max-width: 50%;
+  max-width: 100%;
   transform: translateY(-5vh);
 
   .map-wrapper {
